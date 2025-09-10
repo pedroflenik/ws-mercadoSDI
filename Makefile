@@ -8,7 +8,7 @@ JFLAGS = -g
 .java.class:
 	$(JAVAC) $(JFLAGS) wsMercado\$*.java
 
-default: MercadoServidor MercadoServidorImpl MercadoServidorPublisher
+default: MercadoServidor MercadoServidorImpl MercadoServidorPublisher wsClientMercado
 
 MercadoServidorImpl: wsMercado/MercadoServidorImpl.java
 	$(JAVAC) $(JFLAGS) wsMercado/MercadoServidorImpl.java
@@ -19,5 +19,8 @@ MercadoServidor: wsMercado/MercadoServidor.java
 MercadoServidorPublisher: wsMercado/MercadoServidorPublisher.java
 	$(JAVAC) $(JFLAGS) wsMercado/MercadoServidorPublisher.java
 
+wsClientMercado: wsMercado/wsClientMercado.java
+	$(JAVAC) $(JFLAGS) wsMercado/wsClientMercado.java
+	
 clean:
 	rm -f wsMercado/*.class 
